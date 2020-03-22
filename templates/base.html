@@ -1,0 +1,24 @@
+{% load static %}
+<meta charset="UTF-8">
+<style>
+<head>
+    <link rel="stylesheet"  href="{% static 'css/bootstrap.css' %}"/>
+</head>
+body {
+  background-image: url("/static/images/ele.jpg");
+
+
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+<h1>My Personal Blog</h1>
+
+<div class="new">
+    <h3><a href="{% url 'new_article' %}" style="color:red;font-style:italic;">Add New Article</a></h3>
+</div>
+<div class="Container">
+    {% block content %}
+    {% endblock %}
+</div>

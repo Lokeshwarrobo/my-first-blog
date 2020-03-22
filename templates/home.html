@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}"/>
+</head>
+
+
+    <style>
+body {
+  background-image: url("/static/images/ele.jpg");
+  background repeat: no-repeat;
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+
+
+<h1 style="color:red font-style:italic">Welcome to Blog</h1>
+
+<div style="text-align:center;border: 3px solid green;">
+{% include 'nav.html' %}
+
+</div>
+{% block content %}
+{% endblock %}
+</html>

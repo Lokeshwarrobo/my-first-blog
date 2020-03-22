@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+
+<head>
+
+</head>
+{% block content %}
+{% for arti in object_list %}
+
+    <style>
+body {
+  background-image: url("/static/images/ele.jpg");
+  background repeat: no-repeat;
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+       <div style="display: block;
+color: #666;
+text-align:center;
+padding: 14px 16px;
+border:20px solid #e7e7e7">
+
+        <h3><a href="{% url 'article_page' arti.pk %}" style="color:red;font-style:italic;font-size:40;">{{ arti.title }}</a> </h3>
+        <p style="display: block;
+        color: #666;text-align:center;
+        padding: 14px 16px;
+        font-size:20;
+        border:5px solid green;
+        background-repeat: repeat-x;">{{ arti.text|truncatechars:200 }}
+ <a href="{% url 'article_page' arti.pk %}" class="btn btn-primary btn-sm" style="font-size:15;">ReadMore</a>
+
+
+           </p>
+
+<h5 style="text-align:right;"> Posted by {{ arti.author }}</h5>
+
+
+ {% endfor %}
+</div>
+<a href="{% url 'logout' %}" style="color:red;font-style:italic;">logout</a>
+
+<ul>
+        {% if is_paginated %}
+           {% if page_obj.has_previous %}
+              <a href="?page={{ page_obj.previous_page_number }}">Previous page</a>
+            {% endif %}
+           {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next page</a>
+            {% endif %}
+        {% endif %}
+
+
+</ul>
+{% endblock %}
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet"  href="{% static 'css/bootstrap.css' %}"/>
+</head>
+
+    <style>
+body {
+  background-image: url("/static/images/ele.jpg");
+  background repeat: no-repeat;
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+{% block content %}
+<div class="Container">
+
+    <h2 style="display: block;
+        color:DodgerBlue;;
+        padding: 10px 1px;
+        background-color: none;
+        background-repeat: no repeat;">{{ batman.title }}</h2>
+    <p style="color:DodgerBlue;
+              display: block;
+              padding:12px 20px;
+              background-color:#e7e7e7;
+              font-style:italic;">{{ batman.text }}</p>
+</div>
+<h3><a href="{% url 'article_edit' batman.pk %}" style="color:red;font-style:italic;">edit this post</a></h3>
+
+<a href="{% url 'article_delete' batman.pk %}" style="color:red;font-style:italic;">Delete this post</a>
+
+{% endblock %}

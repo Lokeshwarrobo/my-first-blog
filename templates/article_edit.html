@@ -1,0 +1,20 @@
+{% block content %}
+    <style>
+body {
+  background-image: url("/static/images/ele.jpg");
+  background repeat: no-repeat;
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Update">
+
+</form>
+
+{% endblock %}

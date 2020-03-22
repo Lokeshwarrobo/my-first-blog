@@ -1,0 +1,21 @@
+{% block content %}
+    <style>
+body {
+  background-image: url("/static/images/ele.jpg");
+  background repeat: no-repeat;
+  background-position: center;
+  background-size: 1580px 900px;
+
+}
+</style>
+<body bgcolor="#F0F8FF">
+<form action="" method="POST">
+    {% csrf_token %}
+<p>{{ batman.title }}</p>
+    {{ form.as_p }}
+
+    <input type="submit" value="Confirm">
+
+</form>
+
+{% endblock %}
